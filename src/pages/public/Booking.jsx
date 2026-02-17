@@ -36,14 +36,13 @@ const Booking = () => {
                 .from('reservations')
                 .insert([
                     {
-                        name: formData.name,
-                        phone: formData.phone,
-                        email: formData.email,
+                        customer_name: formData.name,
+                        customer_phone: formData.phone,
                         guests: parseInt(formData.guests),
                         date: formData.date,
                         time: formData.time,
                         status: 'pending', // Default status
-                        notes: `Table: ${formData.zone}. DP: ${formData.dp}. Notes: ${formData.request}`
+                        notes: `Email: ${formData.email}. Table: ${formData.zone}. DP: ${formData.dp}. Notes: ${formData.request}`
                     }
                 ])
                 .select();
